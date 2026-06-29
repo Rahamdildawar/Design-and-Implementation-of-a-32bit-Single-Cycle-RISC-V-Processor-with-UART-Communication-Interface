@@ -1,6 +1,4 @@
-# Design and Implementation of a 32-bit Single-Cycle
-#RISC-V Processor with Integrated UART
-# Interface
+# Design and Implementation of a 32-bit Single-Cycle RISC-V Processor with Integrated UART Interface
 
 > A fully verified RV32I single-cycle processor with a memory-mapped UART interface — designed in Verilog HDL and synthesized on Xilinx Artix-7 FPGA.
 
