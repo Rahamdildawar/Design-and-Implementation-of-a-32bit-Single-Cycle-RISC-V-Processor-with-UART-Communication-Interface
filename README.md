@@ -193,8 +193,6 @@ The receiver uses 16× oversampling for start-bit detection (waits 8 ticks to ve
   <img src="docs/images/riscv_processor_block_diagram.png" alt="RISC-V Single-Cycle Datapath Block Diagram" width="750"/>
 </p>
 
-![Datapath Block Diagram](docs/images/riscv_processor_block_diagram.png)
-
 Signal flow runs top-to-bottom: PC → Instruction Memory → Decoder → Register File / ALU → Data Memory / UART → Write-Back MUX → Register File. Control signals from the Control Unit fan out horizontally to coordinate all datapath stages.
 
 ---
