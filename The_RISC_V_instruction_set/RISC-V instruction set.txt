@@ -1,0 +1,33 @@
+.data
+storage_space: .word 0x00000000
+mmio_fallback: .word 0x00000000
+
+.text
+main:
+    addi x1, x0, 10
+    addi x2, x0, 5
+
+    add  x3, x1, x2
+    sub  x3, x1, x2
+
+    la   x9, storage_space 
+    sw   x3, 0(x9)
+    lw   x4, 0(x9)
+
+    jal  x1, target
+    nop
+    nop
+
+target:
+    addi x5, x0, 65
+    jalr x2, x1, 0
+
+    la   x6, mmio_fallback
+    sw   x5, 0(x6)
+
+polling_loop:
+    lw   x7, 0(x6)
+    andi x7, x7, 1
+    beq  x7, x0, polling_loop
+
+    lw   x8, 0(x6)
