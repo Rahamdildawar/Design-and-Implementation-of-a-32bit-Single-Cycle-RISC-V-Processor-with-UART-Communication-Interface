@@ -199,8 +199,7 @@ Signal flow runs top-to-bottom: PC → Instruction Memory → Decoder → Regist
 
 ## UART Timing Diagram
 
-> `docs/images/uart_8n1_timing_diagram.png`
-
+<img src="docs/images/uart_8n1_timing_diagram.png" alt="UART 8N1 Timing Diagram" width="600"/>
 ![UART 8N1 Timing](docs/images/uart_8n1_timing_diagram.png)
 
 Transmission of ASCII `'A'` (`0x41 = 01000001b`). Start bit drives TX low for one bit period (Tbit ≈ 8.68 µs at 115200 baud); data bits D[0]–D[7] follow LSB-first; stop bit returns TX high.
