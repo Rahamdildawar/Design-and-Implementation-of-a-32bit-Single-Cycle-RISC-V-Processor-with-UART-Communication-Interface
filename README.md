@@ -199,8 +199,9 @@ Signal flow runs top-to-bottom: PC → Instruction Memory → Decoder → Regist
 
 ## UART Timing Diagram
 
-<img src="docs/images/uart_8n1_timing_diagram.png" alt="UART 8N1 Timing Diagram" width="600"/>
-![UART 8N1 Timing](docs/images/uart_8n1_timing_diagram.png)
+<p align="center">
+  <img src="uart_8n1_timing_diagram.png" alt="Five-Stage RISC-V Pipeline Block Diagram" width="100%"/>
+</p>
 
 Transmission of ASCII `'A'` (`0x41 = 01000001b`). Start bit drives TX low for one bit period (Tbit ≈ 8.68 µs at 115200 baud); data bits D[0]–D[7] follow LSB-first; stop bit returns TX high.
 
@@ -208,9 +209,9 @@ Transmission of ASCII `'A'` (`0x41 = 01000001b`). Start bit drives TX low for on
 
 ## UART TX FSM
 
-> `docs/images/uart_tx_fsm_diagram.png`
-
-![UART TX FSM](docs/images/uart_tx_fsm_diagram.png)
+<p align="center">
+  <img src="uart_tx_fsm_diagram.png" alt="Five-Stage RISC-V Pipeline Block Diagram" width="100%"/>
+</p>
 
 Four-state FSM: IDLE → START → DATA (self-loop on bit_cnt < 7) → STOP → IDLE. TX_BUSY is asserted across START, DATA, and STOP.
 
