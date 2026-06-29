@@ -189,7 +189,9 @@ The receiver uses 16× oversampling for start-bit detection (waits 8 ticks to ve
 
 ## Datapath Block Diagram
 
-<img src="docs/images/riscv_processor_block_diagram.png" alt="UART 8N1 Timing Diagram" width="600"/>
+<p align="center">
+  <img src="docs/images/riscv_processor_block_diagram.png" alt="RISC-V Single-Cycle Datapath Block Diagram" width="750"/>
+</p>
 
 ![Datapath Block Diagram](docs/images/riscv_processor_block_diagram.png)
 
