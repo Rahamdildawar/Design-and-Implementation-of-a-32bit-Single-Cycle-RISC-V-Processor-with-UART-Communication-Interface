@@ -403,33 +403,61 @@ Connect your serial terminal at **115200 baud, 8N1**. On reset, the processor wi
 
 ## File Structure
 
-```
-riscv-single-cycle-uart/
-├── rtl/
-│   ├── Single_Cycle_Processor.v    # Top-level integration
-│   ├── Program_Counter.v
-│   ├── Instruction_Memory.v
-│   ├── Instruction_Decoder.v
-│   ├── Control_Unit.v
-│   ├── Register_File.v
-│   ├── ALU_Control.v
-│   ├── ALU.v
-│   ├── Data_Memory.v
-│   └── UART_Transceiver.v
-├── tb/
-│   └── tb_Single_Cycle_Processor.v # Self-checking testbench
-├── sim/
-│   └── program.hex                 # Test program (hex format)
-├── constraints/
-│   └── artix7.xdc                  # Pin and timing constraints
-├── docs/
-│   ├── images/
-│   │   ├── riscv_processor_block_diagram.png
-│   │   ├── uart_8n1_timing_diagram.png
-│   │   └── uart_tx_fsm_diagram.png
-│   └── report.pdf
-└── README.md
-```
+<h2>📁 Project Structure</h2>
+
+<ul>
+  <li><strong>📦 riscv-single-cycle-uart/</strong>
+    <ul>
+      <li>📂 <strong>rtl/</strong>
+        <ul>
+          <li>📄 Single_Cycle_Processor.v <em>— Top-level integration</em></li>
+          <li>📄 Program_Counter.v</li>
+          <li>📄 Instruction_Memory.v</li>
+          <li>📄 Instruction_Decoder.v</li>
+          <li>📄 Control_Unit.v</li>
+          <li>📄 Register_File.v</li>
+          <li>📄 ALU_Control.v</li>
+          <li>📄 ALU.v</li>
+          <li>📄 Data_Memory.v</li>
+          <li>📄 UART_Transceiver.v</li>
+        </ul>
+      </li>
+
+      <li>📂 <strong>tb/</strong>
+        <ul>
+          <li>📄 tb_Single_Cycle_Processor.v <em>— Self-checking testbench</em></li>
+        </ul>
+      </li>
+
+      <li>📂 <strong>sim/</strong>
+        <ul>
+          <li>📄 program.hex <em>— Test program (Hex format)</em></li>
+        </ul>
+      </li>
+
+      <li>📂 <strong>constraints/</strong>
+        <ul>
+          <li>📄 artix7.xdc <em>— Pin &amp; timing constraints</em></li>
+        </ul>
+      </li>
+
+      <li>📂 <strong>docs/</strong>
+        <ul>
+          <li>📂 <strong>images/</strong>
+            <ul>
+              <li>🖼️ riscv_processor_block_diagram.png</li>
+              <li>🖼️ uart_8n1_timing_diagram.png</li>
+              <li>🖼️ uart_tx_fsm_diagram.png</li>
+            </ul>
+          </li>
+          <li>📄 report.pdf</li>
+        </ul>
+      </li>
+
+      <li>📄 <strong>README.md</strong></li>
+    </ul>
+  </li>
+</ul>
 
 ---
 
