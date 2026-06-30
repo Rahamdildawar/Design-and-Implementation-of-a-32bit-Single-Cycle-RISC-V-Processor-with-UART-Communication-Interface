@@ -399,7 +399,7 @@ program_hw_devices [get_hw_devices xc7a35t_0]
 
 Connect your serial terminal at **115200 baud, 8N1**. On reset, the processor will execute the test program and transmit `'H'` over the TX pin.
 
----
+
 
 ## File Structure
 
@@ -459,7 +459,7 @@ Connect your serial terminal at **115200 baud, 8N1**. On reset, the processor wi
   </li>
 </ul>
 
----
+
 
 ## Future Work
 
