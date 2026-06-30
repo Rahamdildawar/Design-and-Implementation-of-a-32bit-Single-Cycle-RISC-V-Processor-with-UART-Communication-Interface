@@ -84,18 +84,59 @@ The next PC value is selected using a four-way priority multiplexer:
 
 ## Module Hierarchy
 
-```
-Single_Cycle_Processor  (top)
-├── Program_Counter         — 32-bit sync reg; resets to 0x00000000
-├── Instruction_Memory      — 1KB ROM; little-endian; hex-file init
-├── Instruction_Decoder     — Extracts fields; sign-extends immediates
-├── Control_Unit            — 9 control signals + 2-bit ALUOp from opcode
-├── Register_File           — 32×32-bit; x0 hardwired 0; sync write / async read
-├── ALU_Control             — Maps {ALUOp, funct3, funct7[5]} → 4-bit ALUCtrl
-├── ALU                     — 6 operations; Zero flag for BEQ
-├── Data_Memory             — 256B sync-write / async-read RAM
-└── UART_Transceiver        — TX/RX FSMs; baud generator; MMIO registers
-```
+<h2>Module Overview</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Functionality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Single_Cycle_Processor (Top)</b></td>
+      <td>Top-level module that integrates all processor components.</td>
+    </tr>
+    <tr>
+      <td><b>Program_Counter</b></td>
+      <td>32-bit synchronous program counter that resets to <code>0x00000000</code>.</td>
+    </tr>
+    <tr>
+      <td><b>Instruction_Memory</b></td>
+      <td>1 KB ROM with little-endian organization, initialized from a hexadecimal file.</td>
+    </tr>
+    <tr>
+      <td><b>Instruction_Decoder</b></td>
+      <td>Decodes instruction fields and sign-extends immediate values.</td>
+    </tr>
+    <tr>
+      <td><b>Control_Unit</b></td>
+      <td>Generates 9 control signals and a 2-bit <code>ALUOp</code> based on the instruction opcode.</td>
+    </tr>
+    <tr>
+      <td><b>Register_File</b></td>
+      <td>32 × 32-bit register file with synchronous write, asynchronous read, and <code>x0</code> permanently tied to zero.</td>
+    </tr>
+    <tr>
+      <td><b>ALU_Control</b></td>
+      <td>Produces a 4-bit ALU control signal from <code>{ALUOp, funct3, funct7[5]}</code>.</td>
+    </tr>
+    <tr>
+      <td><b>ALU</b></td>
+      <td>Executes six arithmetic and logic operations and generates the <code>Zero</code> flag for <code>BEQ</code> instructions.</td>
+    </tr>
+    <tr>
+      <td><b>Data_Memory</b></td>
+      <td>256-byte data memory with synchronous write and asynchronous read.</td>
+    </tr>
+    <tr>
+      <td><b>UART_Transceiver</b></td>
+      <td>UART transmitter/receiver featuring TX/RX state machines, baud-rate generator, and memory-mapped I/O registers.</td>
+    </tr>
+  </tbody>
+</table>
+ 
 
 ### Control Unit Truth Table
 
