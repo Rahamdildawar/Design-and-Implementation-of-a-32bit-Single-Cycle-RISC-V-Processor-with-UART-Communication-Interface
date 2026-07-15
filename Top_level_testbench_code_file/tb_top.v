@@ -23,8 +23,6 @@ module tb_Single_Cycle_Processor();
     always #5 clk = ~clk;
 
     // --- UART Helper Task ---
-    // Since CLKS_PER_BIT = 10416 and clk period = 10ns, 
-    // each bit duration is 10416 * 10ns = 104,160 ns.
     task send_uart_byte;
         input [7:0] data;
         integer i;
@@ -54,7 +52,6 @@ module tb_Single_Cycle_Processor();
         uart_rx = 1'b1; // Idle state is High
         reset = 1'b1;
 
-        // FIXED: Shifted from #100 to #105 to deassert reset on a falling edge.
         // This prevents the race condition and allows address 0x0 to execute properly.
         #105;
         reset = 1'b0;
@@ -71,8 +68,7 @@ module tb_Single_Cycle_Processor();
 
         $display("[TB] All bytes sent. Watching processor execution and TX response...");
         
-        // Massive 5ms padding window so the simulation doesn't cutoff prematurely 
-        // and the TX module has plenty of time to transmit its full response back!
+
         #5000000;  
         
         $display("Simulation Timeout reached.");
@@ -82,16 +78,8 @@ module tb_Single_Cycle_Processor();
     // Monitor Block
     always @(posedge clk) begin
         if (!reset) begin
-            #1; // Wait for signals to settle after clock edge
-            // Optional: You can uncomment these if you want continuous console logs,
-            // but analyzing signals with Vivado using the waveform window is cleaner!
-            /*
-            $display("--- Tick ---");
-            $display("Time: %0t | PC: 0x%h | Instr: 0x%h", $time, uut.PC_Out, uut.Instr);
-            $display("ALU Result: %d | Zero: %b", uut.ALU_Result, uut.Zero);
-            $display("Reg x1: %d | x2: %d | x3: %d", uut.rf.regs[1], uut.rf.regs[2], uut.rf.regs[3]);
-            $display("----------------");
-            */
+            #1; 
+          
         end
     end
 
