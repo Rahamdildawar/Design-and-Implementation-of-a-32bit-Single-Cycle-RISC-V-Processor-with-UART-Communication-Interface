@@ -300,11 +300,11 @@ poll:
 - Synchronous reset held for 1 full clock cycle
 - `$monitor` task logs: PC, Instr, ALU_Result, Zero, RegWrite, MemWrite, MemRead, Branch, uart_tx
   
-<img width="1884" height="888" alt="image" src="https://github.com/user-attachments/assets/cfbb104f-6900-418e-b073-ff4714a822f7" />
-<img width="1884" height="888" alt="image" src="https://github.com/user-attachments/assets/4d1a8018-c4b2-4576-af58-a33cb42beb6b" />
-<img width="1884" height="888" alt="image" src="https://github.com/user-attachments/assets/df6f26db-8c25-4037-80e9-6968985902cb" />
-<img width="1884" height="888" alt="image" src="https://github.com/user-attachments/assets/bb3f1523-bb3a-42c8-a12a-80b61b95073d" />
-<img width="1884" height="888" alt="image" src="https://github.com/user-attachments/assets/97f633f3-9fdd-4294-a75b-f3786f35c37b" />
+<img width="1884" height="888" alt="image" src="image_1.png" />
+<img width="1884" height="888" alt="image" src="image_2.png" />
+<img width="1884" height="888" alt="image" src="image_3.png" />
+<img width="1884" height="888" alt="image" src="image_4.png" />
+<img width="1884" height="888" alt="image" src="image_5.png" />
 
 
 
