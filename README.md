@@ -499,12 +499,3 @@ Department of Computer Engineering — Ghulam Ishaq Khan Institute (GIKI)
 4. Texas Instruments, *UART Serial Communication*, App Report SLAA074, Sep. 2002.
 5. Xilinx Inc., *Vivado Design Suite User Guide: Simulation*, UG900, 2022.
 
----
-
-## License
-
-This project is released under the [MIT License](LICENSE). See `LICENSE` for details.
-
----
-
-*Designed and verified using Xilinx Vivado 2022.1 — Computer Engineering Project, GIKI.*
